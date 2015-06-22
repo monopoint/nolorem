@@ -24,11 +24,8 @@ nolorem.init = function(){
 
         })
         .done(function(data){
-            console.log("photos loaded");
-            $.each( data.items, function( i, item ) {
-                var src = item.media.m.replace("_m.jpg","_b.jpg");
-                nolorem.i.data.images.push(src);
-            });
+            console.log("done call");
+
             $.holdReady(false);
         })
         .error(function (e){
@@ -36,8 +33,12 @@ nolorem.init = function(){
             console.log(e);
             $.holdReady(false);
         })
-        .success(function(){
+        .success(function(data){
            console.log("success call");
+             $.each( data.items, function( i, item ) {
+                var src = item.media.m.replace("_m.jpg","_b.jpg");
+                nolorem.i.data.images.push(src);
+            });
             $.holdReady(false);
         });
 
