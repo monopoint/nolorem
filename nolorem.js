@@ -25,8 +25,6 @@ nolorem.init = function(){
         })
         .done(function(data){
             console.log("done call");
-
-            $.holdReady(false);
         })
         .error(function (e){
             console.log("image source failed");
