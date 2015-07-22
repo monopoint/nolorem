@@ -23,6 +23,9 @@ nolorem.init = function(){
             format: "json"
 
         })
+        .complete(function(){
+            console.log("Complete called on images")
+        })
         .done(function(data){
             console.log("done call");
         })
@@ -48,6 +51,9 @@ nolorem.init = function(){
             tags: "faces,closeup",
             tagmode: "all",
             format: "json"
+        })
+        .complete(function(){
+            console.log("Complete called on images")
         })
         .done(function(data){
             $.each( data.items, function( i, item ) {
