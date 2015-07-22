@@ -27,7 +27,7 @@ nolorem.init = function(){
             console.log("Complete called on images")
         })
         .done(function(data){
-            console.log("done call");
+            console.log("done call on images");
         })
         .error(function (e){
             console.log("image source failed");
@@ -35,7 +35,7 @@ nolorem.init = function(){
             $.holdReady(false);
         })
         .success(function(data){
-           console.log("success call");
+           console.log("success call on images");
              $.each( data.items, function( i, item ) {
                 var src = item.media.m.replace("_m.jpg","_b.jpg");
                 nolorem.i.data.images.push(src);
@@ -61,7 +61,7 @@ nolorem.init = function(){
                 nolorem.i.data.profileImages.push(src);
             });
             $.holdReady(false);
-            console.log("profile pictures loaded");
+            console.log("done call on profile pix");
         })
         .error(function (e){
             console.log("profile pix source failed");
@@ -69,7 +69,7 @@ nolorem.init = function(){
             $.holdReady(false);
         })
         .success(function(){
-           console.log("success call");
+           console.log("success call on profile pix");
             $.holdReady(false);
         });
 
